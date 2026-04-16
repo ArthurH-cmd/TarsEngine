@@ -19,14 +19,22 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Inc\App.h" />
     <ClInclude Include="Inc\Common.h" />
     <ClInclude Include="Inc\TarsEngine.h" />
     <ClInclude Include="Src\Precompiled.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Src\App.cpp" />
     <ClCompile Include="Src\Precompiled.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="Src\TarsEngine.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\FrameWork\Core\Core.vcxproj">
+      <Project>{e4e3f764-d5bf-4dc0-96ca-cf4503e18751}</Project>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>

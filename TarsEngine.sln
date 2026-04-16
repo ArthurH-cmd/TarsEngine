@@ -11,6 +11,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FrameWork", "FrameWork", "{
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Core", "FrameWork\Core\Core.vcxproj", "{E4E3F764-D5BF-4DC0-96CA-CF4503E18751}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "VGP242", "VGP242", "{AF9E47C0-9AC8-4723-9772-D706D2153688}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "01_HelloWindow", "VGP242\01_HelloWindow\01_HelloWindow.vcxproj", "{EEA58638-EB55-4C49-B3CD-4E1F7EF2195F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -35,6 +39,14 @@ Global
 		{E4E3F764-D5BF-4DC0-96CA-CF4503E18751}.Release|x64.Build.0 = Release|x64
 		{E4E3F764-D5BF-4DC0-96CA-CF4503E18751}.Release|x86.ActiveCfg = Release|Win32
 		{E4E3F764-D5BF-4DC0-96CA-CF4503E18751}.Release|x86.Build.0 = Release|Win32
+		{EEA58638-EB55-4C49-B3CD-4E1F7EF2195F}.Debug|x64.ActiveCfg = Debug|x64
+		{EEA58638-EB55-4C49-B3CD-4E1F7EF2195F}.Debug|x64.Build.0 = Debug|x64
+		{EEA58638-EB55-4C49-B3CD-4E1F7EF2195F}.Debug|x86.ActiveCfg = Debug|Win32
+		{EEA58638-EB55-4C49-B3CD-4E1F7EF2195F}.Debug|x86.Build.0 = Debug|Win32
+		{EEA58638-EB55-4C49-B3CD-4E1F7EF2195F}.Release|x64.ActiveCfg = Release|x64
+		{EEA58638-EB55-4C49-B3CD-4E1F7EF2195F}.Release|x64.Build.0 = Release|x64
+		{EEA58638-EB55-4C49-B3CD-4E1F7EF2195F}.Release|x86.ActiveCfg = Release|Win32
+		{EEA58638-EB55-4C49-B3CD-4E1F7EF2195F}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -42,6 +54,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{CF1017FE-8690-492C-9A5E-445BCB81DB14} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 		{E4E3F764-D5BF-4DC0-96CA-CF4503E18751} = {1B817A31-A6B1-4151-A322-96C766D78EB6}
+		{EEA58638-EB55-4C49-B3CD-4E1F7EF2195F} = {AF9E47C0-9AC8-4723-9772-D706D2153688}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C97729AD-3A5C-476C-9C8B-70A7D43E15D4}
