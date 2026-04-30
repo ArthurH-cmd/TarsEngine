@@ -36,6 +36,9 @@
     <ProjectReference Include="..\..\FrameWork\Core\Core.vcxproj">
       <Project>{e4e3f764-d5bf-4dc0-96ca-cf4503e18751}</Project>
     </ProjectReference>
+    <ProjectReference Include="..\..\FrameWork\Graphics\Graphics.vcxproj">
+      <Project>{36e77fe5-5854-4831-bc87-0244456cc50d}</Project>
+    </ProjectReference>
     <ProjectReference Include="..\..\FrameWork\Input\Input.vcxproj">
       <Project>{3629f01a-6fed-42eb-b308-e9f7f1346eaf}</Project>
     </ProjectReference>

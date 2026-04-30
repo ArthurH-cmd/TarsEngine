@@ -5,6 +5,7 @@
 using namespace TarsEngine;
 using namespace TarsEngine::Core;
 using namespace TarsEngine::Input;
+using namespace TarsEngine::Graphics;
 
 void App::Run(const AppConfig& config)
 {
@@ -20,6 +21,9 @@ void App::Run(const AppConfig& config)
 
 	auto handle = myWindow.GetWindowsHandle();
 	InputSystem::StaticInitialize(handle);
+	GraphicsSystem::StaticInitialize(handle, config.fullScreen);
+
+	GraphicsSystem::Get()->SetClearColor(Colors::Aqua);
 
 	ASSERT(mCurrentState != nullptr, "App: AppState is not set!");
 	mCurrentState->Initialize();
@@ -58,6 +62,11 @@ void App::Run(const AppConfig& config)
 		mCurrentState->Update(deltaTime);
 
 		// render flow
+		GraphicsSystem* gs = GraphicsSystem::Get();
+		gs->BeginRender();
+			mCurrentState->Render();
+		gs->EndRender();
+
 	}
 
 	// terminate the Active State
@@ -65,6 +74,7 @@ void App::Run(const AppConfig& config)
 	// main loop
 
 	// when the app is closed, destroy all singletons
+	GraphicsSystem::StaticTerminate();
 	InputSystem::StaticTerminate();
 	// ends the app
 

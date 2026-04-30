@@ -1,5 +1,6 @@
 #pragma once
 
+#include "Color.h"
 
 namespace TarsEngine::Graphics
 {
@@ -30,6 +31,7 @@ namespace TarsEngine::Graphics
 		void ResetRenderTarget();
 		void ResetViewport();
 
+		void SetClearColor(const Color& color);
 		void SetVSync(bool vsync);
 
 		uint32_t GetBackBufferWidth() const;
@@ -54,6 +56,7 @@ namespace TarsEngine::Graphics
 		DXGI_SWAP_CHAIN_DESC mSwapChainDesc{};
 		D3D11_VIEWPORT mViewport{};
 
+		Color mClearColor = Colors::Black;
 		UINT mVSync = 1;
 	};
 
