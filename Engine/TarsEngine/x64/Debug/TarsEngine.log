@@ -1,2 +1,5 @@
-﻿  App.cpp
+﻿  Precompiled.cpp
+  App.cpp
+  TarsEngine.cpp
+  Generating Code...
   TarsEngine.vcxproj -> C:\Users\arthu\Desktop\TarsEngine\x64\Debug\TarsEngine.lib

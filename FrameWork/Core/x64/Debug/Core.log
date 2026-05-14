@@ -1,2 +1,6 @@
-﻿  WindowMessageHandler.cpp
+﻿  Precompiled.cpp
+  TimeUtil.cpp
+  Window.cpp
+  WindowMessageHandler.cpp
+  Generating Code...
   Core.vcxproj -> C:\Users\arthu\Desktop\TarsEngine\x64\Debug\Core.lib

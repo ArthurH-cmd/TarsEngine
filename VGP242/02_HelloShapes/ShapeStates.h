@@ -15,13 +15,31 @@ protected:
 	struct Vertex
 	{
 		TarsEngine::Math::Vector3 position;
+		TarsEngine::Graphics::Color color;
 	};
-	using Vertices = std::vector<Vertex>;
+
+	using Vertices = std::vector<TarsEngine::Graphics::VertexPC>;
 	Vertices mVertices;
 
-	ID3D11Buffer* mVertexBuffer = nullptr;
-	ID3D11VertexShader* mVertexShader = nullptr;
-	ID3D11InputLayout* mInputLayout = nullptr;
-	ID3D11PixelShader* mPixelShader = nullptr;
+
+	TarsEngine::Graphics::VertexShader mVertexShader;
+	TarsEngine::Graphics::MeshBuffer mMeshBuffer;
+	TarsEngine::Graphics::PixleShader mPixelShader;
+};
+
+class QuadState : public ShapeState
+{
+public:
+	void Update(float deltaTime) override;
+protected:
+	void CreateShape() override;
+};
+
+class HouseState : public ShapeState
+{
+public:
+	void Update(float deltaTime) override;
+protected:
+	void CreateShape() override;
 };
 

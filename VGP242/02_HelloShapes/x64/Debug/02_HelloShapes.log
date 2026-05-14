@@ -1,4 +1,350 @@
 ﻿  ShapeStates.cpp
+C:\Users\arthu\Desktop\TarsEngine\FrameWork\Math\Inc\Matrix4.h(56,36): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file 'ShapeStates.cpp')
+  
+C:\Users\arthu\Desktop\TarsEngine\FrameWork\Math\Inc\Matrix4.h(56,49): error C2143: syntax error: missing ',' before '&'
+  (compiling source file 'ShapeStates.cpp')
+  
+C:\Users\arthu\Desktop\TarsEngine\FrameWork\Math\Inc\Matrix4.h(67,37): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file 'ShapeStates.cpp')
+  
+C:\Users\arthu\Desktop\TarsEngine\FrameWork\Math\Inc\Matrix4.h(67,50): error C2143: syntax error: missing ',' before '&'
+  (compiling source file 'ShapeStates.cpp')
+  
+C:\Users\arthu\Desktop\TarsEngine\FrameWork\Math\Inc\Matrix4.h(101,61): error C2039: 'Quaternion': is not a member of 'SpEngine::Math'
+  (compiling source file 'ShapeStates.cpp')
+      C:\Users\arthu\Desktop\TarsEngine\FrameWork\Math\Inc\Matrix4.h(3,11):
+      see declaration of 'SpEngine::Math'
+  
+C:\Users\arthu\Desktop\TarsEngine\FrameWork\Math\Inc\Matrix4.h(101,49): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file 'ShapeStates.cpp')
+  
+C:\Users\arthu\Desktop\TarsEngine\FrameWork\Math\Inc\Matrix4.h(101,71): error C2143: syntax error: missing ',' before '&'
+  (compiling source file 'ShapeStates.cpp')
+  
+C:\Users\arthu\Desktop\TarsEngine\FrameWork\Math\Inc\Matrix4.h(149,32): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file 'ShapeStates.cpp')
+  
+C:\Users\arthu\Desktop\TarsEngine\FrameWork\Math\Inc\Matrix4.h(149,45): error C2143: syntax error: missing ',' before '&'
+  (compiling source file 'ShapeStates.cpp')
+  
+C:\Users\arthu\Desktop\TarsEngine\FrameWork\Math\Inc\Matrix4.h(59,13): error C2440: '<function-style-cast>': cannot convert from 'initializer list' to 'SpEngine::Math::Matrix4'
+  (compiling source file 'ShapeStates.cpp')
+      C:\Users\arthu\Desktop\TarsEngine\FrameWork\Math\Inc\Matrix4.h(59,13):
+      'SpEngine::Math::Matrix4::Matrix4': function does not take 13 arguments
+          C:\Users\arthu\Desktop\TarsEngine\FrameWork\Math\Inc\Matrix4.h(59,13):
+          while trying to match the argument list '(float, float, float, float, float, float, float, float, float, float, float, float, float)'
+  
+C:\Users\arthu\Desktop\TarsEngine\FrameWork\Math\Inc\Matrix4.h(105,32): error C2065: 'q': undeclared identifier
+  (compiling source file 'ShapeStates.cpp')
+  
+C:\Users\arthu\Desktop\TarsEngine\FrameWork\Math\Inc\Matrix4.h(105,38): error C2065: 'q': undeclared identifier
+  (compiling source file 'ShapeStates.cpp')
+  
+C:\Users\arthu\Desktop\TarsEngine\FrameWork\Math\Inc\Matrix4.h(105,53): error C2065: 'q': undeclared identifier
+  (compiling source file 'ShapeStates.cpp')
+  
+C:\Users\arthu\Desktop\TarsEngine\FrameWork\Math\Inc\Matrix4.h(105,59): error C2065: 'q': undeclared identifier
+  (compiling source file 'ShapeStates.cpp')
+  
+C:\Users\arthu\Desktop\TarsEngine\FrameWork\Math\Inc\Matrix4.h(106,25): error C2065: 'q': undeclared identifier
+  (compiling source file 'ShapeStates.cpp')
+  
+C:\Users\arthu\Desktop\TarsEngine\FrameWork\Math\Inc\Matrix4.h(106,31): error C2065: 'q': undeclared identifier
+  (compiling source file 'ShapeStates.cpp')
+  
+C:\Users\arthu\Desktop\TarsEngine\FrameWork\Math\Inc\Matrix4.h(106,46): error C2065: 'q': undeclared identifier
+  (compiling source file 'ShapeStates.cpp')
+  
+C:\Users\arthu\Desktop\TarsEngine\FrameWork\Math\Inc\Matrix4.h(106,52): error C2065: 'q': undeclared identifier
+  (compiling source file 'ShapeStates.cpp')
+  
+C:\Users\arthu\Desktop\TarsEngine\FrameWork\Math\Inc\Matrix4.h(107,25): error C2065: 'q': undeclared identifier
+  (compiling source file 'ShapeStates.cpp')
+  
+C:\Users\arthu\Desktop\TarsEngine\FrameWork\Math\Inc\Matrix4.h(107,31): error C2065: 'q': undeclared identifier
+  (compiling source file 'ShapeStates.cpp')
+  
+C:\Users\arthu\Desktop\TarsEngine\FrameWork\Math\Inc\Matrix4.h(107,46): error C2065: 'q': undeclared identifier
+  (compiling source file 'ShapeStates.cpp')
+  
+C:\Users\arthu\Desktop\TarsEngine\FrameWork\Math\Inc\Matrix4.h(107,52): error C2065: 'q': undeclared identifier
+  (compiling source file 'ShapeStates.cpp')
+  
+C:\Users\arthu\Desktop\TarsEngine\FrameWork\Math\Inc\Matrix4.h(110,25): error C2065: 'q': undeclared identifier
+  (compiling source file 'ShapeStates.cpp')
+  
+C:\Users\arthu\Desktop\TarsEngine\FrameWork\Math\Inc\Matrix4.h(110,31): error C2065: 'q': undeclared identifier
+  (compiling source file 'ShapeStates.cpp')
+  
+C:\Users\arthu\Desktop\TarsEngine\FrameWork\Math\Inc\Matrix4.h(110,46): error C2065: 'q': undeclared identifier
+  (compiling source file 'ShapeStates.cpp')
+  
+C:\Users\arthu\Desktop\TarsEngine\FrameWork\Math\Inc\Matrix4.h(110,52): error C2065: 'q': undeclared identifier
+  (compiling source file 'ShapeStates.cpp')
+  
+C:\Users\arthu\Desktop\TarsEngine\FrameWork\Math\Inc\Matrix4.h(111,32): error C2065: 'q': undeclared identifier
+  (compiling source file 'ShapeStates.cpp')
+  
+C:\Users\arthu\Desktop\TarsEngine\FrameWork\Math\Inc\Matrix4.h(111,38): error C2065: 'q': undeclared identifier
+  (compiling source file 'ShapeStates.cpp')
+  
+C:\Users\arthu\Desktop\TarsEngine\FrameWork\Math\Inc\Matrix4.h(111,53): error C2065: 'q': undeclared identifier
+  (compiling source file 'ShapeStates.cpp')
+  
+C:\Users\arthu\Desktop\TarsEngine\FrameWork\Math\Inc\Matrix4.h(111,59): error C2065: 'q': undeclared identifier
+  (compiling source file 'ShapeStates.cpp')
+  
+C:\Users\arthu\Desktop\TarsEngine\FrameWork\Math\Inc\Matrix4.h(112,25): error C2065: 'q': undeclared identifier
+  (compiling source file 'ShapeStates.cpp')
+  
+C:\Users\arthu\Desktop\TarsEngine\FrameWork\Math\Inc\Matrix4.h(112,31): error C2065: 'q': undeclared identifier
+  (compiling source file 'ShapeStates.cpp')
+  
+C:\Users\arthu\Desktop\TarsEngine\FrameWork\Math\Inc\Matrix4.h(112,46): error C2065: 'q': undeclared identifier
+  (compiling source file 'ShapeStates.cpp')
+  
+C:\Users\arthu\Desktop\TarsEngine\FrameWork\Math\Inc\Matrix4.h(112,52): error C2065: 'q': undeclared identifier
+  (compiling source file 'ShapeStates.cpp')
+  
+C:\Users\arthu\Desktop\TarsEngine\FrameWork\Math\Inc\Matrix4.h(115,25): error C2065: 'q': undeclared identifier
+  (compiling source file 'ShapeStates.cpp')
+  
+C:\Users\arthu\Desktop\TarsEngine\FrameWork\Math\Inc\Matrix4.h(115,31): error C2065: 'q': undeclared identifier
+  (compiling source file 'ShapeStates.cpp')
+  
+C:\Users\arthu\Desktop\TarsEngine\FrameWork\Math\Inc\Matrix4.h(115,46): error C2065: 'q': undeclared identifier
+  (compiling source file 'ShapeStates.cpp')
+  
+C:\Users\arthu\Desktop\TarsEngine\FrameWork\Math\Inc\Matrix4.h(115,52): error C2065: 'q': undeclared identifier
+  (compiling source file 'ShapeStates.cpp')
+  
+C:\Users\arthu\Desktop\TarsEngine\FrameWork\Math\Inc\Matrix4.h(116,25): error C2065: 'q': undeclared identifier
+  (compiling source file 'ShapeStates.cpp')
+  
+C:\Users\arthu\Desktop\TarsEngine\FrameWork\Math\Inc\Matrix4.h(116,31): error C2065: 'q': undeclared identifier
+  (compiling source file 'ShapeStates.cpp')
+  
+C:\Users\arthu\Desktop\TarsEngine\FrameWork\Math\Inc\Matrix4.h(116,46): error C2065: 'q': undeclared identifier
+  (compiling source file 'ShapeStates.cpp')
+  
+C:\Users\arthu\Desktop\TarsEngine\FrameWork\Math\Inc\Matrix4.h(116,52): error C2065: 'q': undeclared identifier
+  (compiling source file 'ShapeStates.cpp')
+  
+C:\Users\arthu\Desktop\TarsEngine\FrameWork\Math\Inc\Matrix4.h(117,32): error C2065: 'q': undeclared identifier
+  (compiling source file 'ShapeStates.cpp')
+  
+C:\Users\arthu\Desktop\TarsEngine\FrameWork\Math\Inc\Matrix4.h(117,38): error C2065: 'q': undeclared identifier
+  (compiling source file 'ShapeStates.cpp')
+  
+C:\Users\arthu\Desktop\TarsEngine\FrameWork\Math\Inc\Matrix4.h(117,53): error C2065: 'q': undeclared identifier
+  (compiling source file 'ShapeStates.cpp')
+  
+C:\Users\arthu\Desktop\TarsEngine\FrameWork\Math\Inc\Matrix4.h(117,59): error C2065: 'q': undeclared identifier
+  (compiling source file 'ShapeStates.cpp')
+  
+C:\Users\arthu\Desktop\TarsEngine\FrameWork\Math\Inc\Matrix4.h(104,13): error C2440: '<function-style-cast>': cannot convert from 'initializer list' to 'SpEngine::Math::Matrix4'
+  (compiling source file 'ShapeStates.cpp')
+      C:\Users\arthu\Desktop\TarsEngine\FrameWork\Math\Inc\Matrix4.h(104,13):
+      'SpEngine::Math::Matrix4::Matrix4': function does not take 7 arguments
+          C:\Users\arthu\Desktop\TarsEngine\FrameWork\Math\Inc\Matrix4.h(104,13):
+          while trying to match the argument list '(float, float, float, float, float, float, float)'
+  
+C:\Users\arthu\Desktop\TarsEngine\FrameWork\Math\Inc\Matrix4.h(153,17): error C2065: 's': undeclared identifier
+  (compiling source file 'ShapeStates.cpp')
+  
+C:\Users\arthu\Desktop\TarsEngine\FrameWork\Math\Inc\Matrix4.h(154,23): error C2065: 's': undeclared identifier
+  (compiling source file 'ShapeStates.cpp')
+  
+C:\Users\arthu\Desktop\TarsEngine\FrameWork\Math\Inc\Matrix4.h(155,29): error C2065: 's': undeclared identifier
+  (compiling source file 'ShapeStates.cpp')
+  
+C:\Users\arthu\Desktop\TarsEngine\FrameWork\Math\Inc\Matrix4.h(152,13): error C2440: '<function-style-cast>': cannot convert from 'initializer list' to 'SpEngine::Math::Matrix4'
+  (compiling source file 'ShapeStates.cpp')
+      C:\Users\arthu\Desktop\TarsEngine\FrameWork\Math\Inc\Matrix4.h(152,13):
+      'SpEngine::Math::Matrix4::Matrix4': function does not take 13 arguments
+          C:\Users\arthu\Desktop\TarsEngine\FrameWork\Math\Inc\Matrix4.h(152,13):
+          while trying to match the argument list '(float, float, float, float, float, float, float, float, float, float, float, float, float)'
+  
+C:\Users\arthu\Desktop\TarsEngine\FrameWork\Math\Inc\Quaternion.h(46,47): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file 'ShapeStates.cpp')
+  
+C:\Users\arthu\Desktop\TarsEngine\FrameWork\Math\Inc\Quaternion.h(46,60): error C2143: syntax error: missing ',' before '&'
+  (compiling source file 'ShapeStates.cpp')
+  
+C:\Users\arthu\Desktop\TarsEngine\VGP242\02_HelloShapes\ShapeStates.cpp(10,73): warning C4267: 'argument': conversion from 'size_t' to 'uint32_t', possible loss of data
   WinMain.cpp
+C:\Users\arthu\Desktop\TarsEngine\FrameWork\Math\Inc\Matrix4.h(56,36): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file 'WinMain.cpp')
+  
+C:\Users\arthu\Desktop\TarsEngine\FrameWork\Math\Inc\Matrix4.h(56,49): error C2143: syntax error: missing ',' before '&'
+  (compiling source file 'WinMain.cpp')
+  
+C:\Users\arthu\Desktop\TarsEngine\FrameWork\Math\Inc\Matrix4.h(67,37): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file 'WinMain.cpp')
+  
+C:\Users\arthu\Desktop\TarsEngine\FrameWork\Math\Inc\Matrix4.h(67,50): error C2143: syntax error: missing ',' before '&'
+  (compiling source file 'WinMain.cpp')
+  
+C:\Users\arthu\Desktop\TarsEngine\FrameWork\Math\Inc\Matrix4.h(101,61): error C2039: 'Quaternion': is not a member of 'SpEngine::Math'
+  (compiling source file 'WinMain.cpp')
+      C:\Users\arthu\Desktop\TarsEngine\FrameWork\Math\Inc\Matrix4.h(3,11):
+      see declaration of 'SpEngine::Math'
+  
+C:\Users\arthu\Desktop\TarsEngine\FrameWork\Math\Inc\Matrix4.h(101,49): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file 'WinMain.cpp')
+  
+C:\Users\arthu\Desktop\TarsEngine\FrameWork\Math\Inc\Matrix4.h(101,71): error C2143: syntax error: missing ',' before '&'
+  (compiling source file 'WinMain.cpp')
+  
+C:\Users\arthu\Desktop\TarsEngine\FrameWork\Math\Inc\Matrix4.h(149,32): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file 'WinMain.cpp')
+  
+C:\Users\arthu\Desktop\TarsEngine\FrameWork\Math\Inc\Matrix4.h(149,45): error C2143: syntax error: missing ',' before '&'
+  (compiling source file 'WinMain.cpp')
+  
+C:\Users\arthu\Desktop\TarsEngine\FrameWork\Math\Inc\Matrix4.h(59,13): error C2440: '<function-style-cast>': cannot convert from 'initializer list' to 'SpEngine::Math::Matrix4'
+  (compiling source file 'WinMain.cpp')
+      C:\Users\arthu\Desktop\TarsEngine\FrameWork\Math\Inc\Matrix4.h(59,13):
+      'SpEngine::Math::Matrix4::Matrix4': function does not take 13 arguments
+          C:\Users\arthu\Desktop\TarsEngine\FrameWork\Math\Inc\Matrix4.h(59,13):
+          while trying to match the argument list '(float, float, float, float, float, float, float, float, float, float, float, float, float)'
+  
+C:\Users\arthu\Desktop\TarsEngine\FrameWork\Math\Inc\Matrix4.h(105,32): error C2065: 'q': undeclared identifier
+  (compiling source file 'WinMain.cpp')
+  
+C:\Users\arthu\Desktop\TarsEngine\FrameWork\Math\Inc\Matrix4.h(105,38): error C2065: 'q': undeclared identifier
+  (compiling source file 'WinMain.cpp')
+  
+C:\Users\arthu\Desktop\TarsEngine\FrameWork\Math\Inc\Matrix4.h(105,53): error C2065: 'q': undeclared identifier
+  (compiling source file 'WinMain.cpp')
+  
+C:\Users\arthu\Desktop\TarsEngine\FrameWork\Math\Inc\Matrix4.h(105,59): error C2065: 'q': undeclared identifier
+  (compiling source file 'WinMain.cpp')
+  
+C:\Users\arthu\Desktop\TarsEngine\FrameWork\Math\Inc\Matrix4.h(106,25): error C2065: 'q': undeclared identifier
+  (compiling source file 'WinMain.cpp')
+  
+C:\Users\arthu\Desktop\TarsEngine\FrameWork\Math\Inc\Matrix4.h(106,31): error C2065: 'q': undeclared identifier
+  (compiling source file 'WinMain.cpp')
+  
+C:\Users\arthu\Desktop\TarsEngine\FrameWork\Math\Inc\Matrix4.h(106,46): error C2065: 'q': undeclared identifier
+  (compiling source file 'WinMain.cpp')
+  
+C:\Users\arthu\Desktop\TarsEngine\FrameWork\Math\Inc\Matrix4.h(106,52): error C2065: 'q': undeclared identifier
+  (compiling source file 'WinMain.cpp')
+  
+C:\Users\arthu\Desktop\TarsEngine\FrameWork\Math\Inc\Matrix4.h(107,25): error C2065: 'q': undeclared identifier
+  (compiling source file 'WinMain.cpp')
+  
+C:\Users\arthu\Desktop\TarsEngine\FrameWork\Math\Inc\Matrix4.h(107,31): error C2065: 'q': undeclared identifier
+  (compiling source file 'WinMain.cpp')
+  
+C:\Users\arthu\Desktop\TarsEngine\FrameWork\Math\Inc\Matrix4.h(107,46): error C2065: 'q': undeclared identifier
+  (compiling source file 'WinMain.cpp')
+  
+C:\Users\arthu\Desktop\TarsEngine\FrameWork\Math\Inc\Matrix4.h(107,52): error C2065: 'q': undeclared identifier
+  (compiling source file 'WinMain.cpp')
+  
+C:\Users\arthu\Desktop\TarsEngine\FrameWork\Math\Inc\Matrix4.h(110,25): error C2065: 'q': undeclared identifier
+  (compiling source file 'WinMain.cpp')
+  
+C:\Users\arthu\Desktop\TarsEngine\FrameWork\Math\Inc\Matrix4.h(110,31): error C2065: 'q': undeclared identifier
+  (compiling source file 'WinMain.cpp')
+  
+C:\Users\arthu\Desktop\TarsEngine\FrameWork\Math\Inc\Matrix4.h(110,46): error C2065: 'q': undeclared identifier
+  (compiling source file 'WinMain.cpp')
+  
+C:\Users\arthu\Desktop\TarsEngine\FrameWork\Math\Inc\Matrix4.h(110,52): error C2065: 'q': undeclared identifier
+  (compiling source file 'WinMain.cpp')
+  
+C:\Users\arthu\Desktop\TarsEngine\FrameWork\Math\Inc\Matrix4.h(111,32): error C2065: 'q': undeclared identifier
+  (compiling source file 'WinMain.cpp')
+  
+C:\Users\arthu\Desktop\TarsEngine\FrameWork\Math\Inc\Matrix4.h(111,38): error C2065: 'q': undeclared identifier
+  (compiling source file 'WinMain.cpp')
+  
+C:\Users\arthu\Desktop\TarsEngine\FrameWork\Math\Inc\Matrix4.h(111,53): error C2065: 'q': undeclared identifier
+  (compiling source file 'WinMain.cpp')
+  
+C:\Users\arthu\Desktop\TarsEngine\FrameWork\Math\Inc\Matrix4.h(111,59): error C2065: 'q': undeclared identifier
+  (compiling source file 'WinMain.cpp')
+  
+C:\Users\arthu\Desktop\TarsEngine\FrameWork\Math\Inc\Matrix4.h(112,25): error C2065: 'q': undeclared identifier
+  (compiling source file 'WinMain.cpp')
+  
+C:\Users\arthu\Desktop\TarsEngine\FrameWork\Math\Inc\Matrix4.h(112,31): error C2065: 'q': undeclared identifier
+  (compiling source file 'WinMain.cpp')
+  
+C:\Users\arthu\Desktop\TarsEngine\FrameWork\Math\Inc\Matrix4.h(112,46): error C2065: 'q': undeclared identifier
+  (compiling source file 'WinMain.cpp')
+  
+C:\Users\arthu\Desktop\TarsEngine\FrameWork\Math\Inc\Matrix4.h(112,52): error C2065: 'q': undeclared identifier
+  (compiling source file 'WinMain.cpp')
+  
+C:\Users\arthu\Desktop\TarsEngine\FrameWork\Math\Inc\Matrix4.h(115,25): error C2065: 'q': undeclared identifier
+  (compiling source file 'WinMain.cpp')
+  
+C:\Users\arthu\Desktop\TarsEngine\FrameWork\Math\Inc\Matrix4.h(115,31): error C2065: 'q': undeclared identifier
+  (compiling source file 'WinMain.cpp')
+  
+C:\Users\arthu\Desktop\TarsEngine\FrameWork\Math\Inc\Matrix4.h(115,46): error C2065: 'q': undeclared identifier
+  (compiling source file 'WinMain.cpp')
+  
+C:\Users\arthu\Desktop\TarsEngine\FrameWork\Math\Inc\Matrix4.h(115,52): error C2065: 'q': undeclared identifier
+  (compiling source file 'WinMain.cpp')
+  
+C:\Users\arthu\Desktop\TarsEngine\FrameWork\Math\Inc\Matrix4.h(116,25): error C2065: 'q': undeclared identifier
+  (compiling source file 'WinMain.cpp')
+  
+C:\Users\arthu\Desktop\TarsEngine\FrameWork\Math\Inc\Matrix4.h(116,31): error C2065: 'q': undeclared identifier
+  (compiling source file 'WinMain.cpp')
+  
+C:\Users\arthu\Desktop\TarsEngine\FrameWork\Math\Inc\Matrix4.h(116,46): error C2065: 'q': undeclared identifier
+  (compiling source file 'WinMain.cpp')
+  
+C:\Users\arthu\Desktop\TarsEngine\FrameWork\Math\Inc\Matrix4.h(116,52): error C2065: 'q': undeclared identifier
+  (compiling source file 'WinMain.cpp')
+  
+C:\Users\arthu\Desktop\TarsEngine\FrameWork\Math\Inc\Matrix4.h(117,32): error C2065: 'q': undeclared identifier
+  (compiling source file 'WinMain.cpp')
+  
+C:\Users\arthu\Desktop\TarsEngine\FrameWork\Math\Inc\Matrix4.h(117,38): error C2065: 'q': undeclared identifier
+  (compiling source file 'WinMain.cpp')
+  
+C:\Users\arthu\Desktop\TarsEngine\FrameWork\Math\Inc\Matrix4.h(117,53): error C2065: 'q': undeclared identifier
+  (compiling source file 'WinMain.cpp')
+  
+C:\Users\arthu\Desktop\TarsEngine\FrameWork\Math\Inc\Matrix4.h(117,59): error C2065: 'q': undeclared identifier
+  (compiling source file 'WinMain.cpp')
+  
+C:\Users\arthu\Desktop\TarsEngine\FrameWork\Math\Inc\Matrix4.h(104,13): error C2440: '<function-style-cast>': cannot convert from 'initializer list' to 'SpEngine::Math::Matrix4'
+  (compiling source file 'WinMain.cpp')
+      C:\Users\arthu\Desktop\TarsEngine\FrameWork\Math\Inc\Matrix4.h(104,13):
+      'SpEngine::Math::Matrix4::Matrix4': function does not take 7 arguments
+          C:\Users\arthu\Desktop\TarsEngine\FrameWork\Math\Inc\Matrix4.h(104,13):
+          while trying to match the argument list '(float, float, float, float, float, float, float)'
+  
+C:\Users\arthu\Desktop\TarsEngine\FrameWork\Math\Inc\Matrix4.h(153,17): error C2065: 's': undeclared identifier
+  (compiling source file 'WinMain.cpp')
+  
+C:\Users\arthu\Desktop\TarsEngine\FrameWork\Math\Inc\Matrix4.h(154,23): error C2065: 's': undeclared identifier
+  (compiling source file 'WinMain.cpp')
+  
+C:\Users\arthu\Desktop\TarsEngine\FrameWork\Math\Inc\Matrix4.h(155,29): error C2065: 's': undeclared identifier
+  (compiling source file 'WinMain.cpp')
+  
+C:\Users\arthu\Desktop\TarsEngine\FrameWork\Math\Inc\Matrix4.h(152,13): error C2440: '<function-style-cast>': cannot convert from 'initializer list' to 'SpEngine::Math::Matrix4'
+  (compiling source file 'WinMain.cpp')
+      C:\Users\arthu\Desktop\TarsEngine\FrameWork\Math\Inc\Matrix4.h(152,13):
+      'SpEngine::Math::Matrix4::Matrix4': function does not take 13 arguments
+          C:\Users\arthu\Desktop\TarsEngine\FrameWork\Math\Inc\Matrix4.h(152,13):
+          while trying to match the argument list '(float, float, float, float, float, float, float, float, float, float, float, float, float)'
+  
+C:\Users\arthu\Desktop\TarsEngine\FrameWork\Math\Inc\Quaternion.h(46,47): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file 'WinMain.cpp')
+  
+C:\Users\arthu\Desktop\TarsEngine\FrameWork\Math\Inc\Quaternion.h(46,60): error C2143: syntax error: missing ',' before '&'
+  (compiling source file 'WinMain.cpp')
+  
   Generating Code...
-  02_HelloShapes.vcxproj -> C:\Users\arthu\Desktop\TarsEngine\x64\Debug\02_HelloShapes.exe
