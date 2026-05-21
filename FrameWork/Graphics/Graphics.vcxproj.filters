@@ -15,9 +15,6 @@
     <ClInclude Include="Inc\Graphics.h">
       <Filter>Inc</Filter>
     </ClInclude>
-    <ClInclude Include="Src\Precompiled.h">
-      <Filter>Src</Filter>
-    </ClInclude>
     <ClInclude Include="Inc\Color.h">
       <Filter>Inc</Filter>
     </ClInclude>
@@ -40,6 +37,15 @@
       <Filter>Inc</Filter>
     </ClInclude>
     <ClInclude Include="Inc\ConstantBuffer.h" />
+    <ClInclude Include="Inc\MeshTypes.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="Inc\MeshBuilder.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Precompiled.h">
+      <Filter>Src</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Src\Precompiled.cpp">
@@ -61,5 +67,8 @@
       <Filter>Src</Filter>
     </ClCompile>
     <ClCompile Include="Src\ConstantBuffer.cpp" />
+    <ClCompile Include="Src\MeshBuilder.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

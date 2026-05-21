@@ -9,4 +9,6 @@
 #include "PixleShader.h"
 #include "VertexShader.h"
 #include "Color.h"
+#include "MeshBuilder.h"
 #include "VertexTypes.h"
+#include "MeshTypes.h"
