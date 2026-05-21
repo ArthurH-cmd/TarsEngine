@@ -29,8 +29,8 @@ void ShapeState::Terminate()
 void ShapeState::Update(float deltaTime)
 {
 	InputSystem* input = InputSystem::Get();
-	const float moveSpeed = input->IsKeyDown(KeyCode::LSHIFT) ? 10.0f : 1.0f;
-	const float turnSpeed = 0.1f;
+	const float moveSpeed = input->IsKeyDown(KeyCode::LSHIFT) ? 20.0f : 10.0f;
+	const float turnSpeed = 0.5f;
 
 	if (input->IsKeyDown(KeyCode::W))
 		mCamera.Walk(moveSpeed * deltaTime);
@@ -74,6 +74,11 @@ void ShapeState::Render()
 void ShapeState::CreateShape()
 {
 	//mMesh = MeshBuilder::CreateVertexCubePC(1, Colors::White);
-	mMesh = MeshBuilder::CreateCubePC(1);
+	//mMesh = MeshBuilder::CreateCubePC(1);
+	//mMesh = MeshBuilder::CreateBoxPC(3.0f,4.0f,2.0f);
+	//mMesh = MeshBuilder::CreatePyramidPC(1.0f);
+	//mMesh = MeshBuilder::CreatePlanePC(10, 10, 1.0f,false);
+	//mMesh = MeshBuilder::CreateCylinderPC(10, 10);
+	mMesh = MeshBuilder::CreateSpherePC(30, 30, 1.0f);
 }
 
