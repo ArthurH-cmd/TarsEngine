@@ -5,4 +5,7 @@ C:\Users\arthu\Desktop\TarsEngine\FrameWork\Graphics\Src\MeshBuffer.cpp;C:\Users
 C:\Users\arthu\Desktop\TarsEngine\FrameWork\Graphics\Src\MeshBuilder.cpp;C:\Users\arthu\Desktop\TarsEngine\FrameWork\Graphics\x64\Debug\MeshBuilder.obj
 C:\Users\arthu\Desktop\TarsEngine\FrameWork\Graphics\Src\PixleShader.cpp;C:\Users\arthu\Desktop\TarsEngine\FrameWork\Graphics\x64\Debug\PixleShader.obj
 C:\Users\arthu\Desktop\TarsEngine\FrameWork\Graphics\Src\Precompiled.cpp;C:\Users\arthu\Desktop\TarsEngine\FrameWork\Graphics\x64\Debug\Precompiled.obj
+C:\Users\arthu\Desktop\TarsEngine\FrameWork\Graphics\Src\Sampler.cpp;C:\Users\arthu\Desktop\TarsEngine\FrameWork\Graphics\x64\Debug\Sampler.obj
+C:\Users\arthu\Desktop\TarsEngine\FrameWork\Graphics\Src\Texture.cpp;C:\Users\arthu\Desktop\TarsEngine\FrameWork\Graphics\x64\Debug\Texture.obj
+C:\Users\arthu\Desktop\TarsEngine\FrameWork\Graphics\Src\TextureManager.cpp;C:\Users\arthu\Desktop\TarsEngine\FrameWork\Graphics\x64\Debug\TextureManager.obj
 C:\Users\arthu\Desktop\TarsEngine\FrameWork\Graphics\Src\VertexShader.cpp;C:\Users\arthu\Desktop\TarsEngine\FrameWork\Graphics\x64\Debug\VertexShader.obj

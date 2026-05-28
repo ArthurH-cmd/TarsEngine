@@ -24,6 +24,7 @@ void App::Run(const AppConfig& config)
 	GraphicsSystem::StaticInitialize(handle, config.fullScreen);
 
 	GraphicsSystem::Get()->SetClearColor(Colors::DarkOliveGreen);
+	TextureManager::StaticInitialize(L"../../Assets/Textures");
 
 	ASSERT(mCurrentState != nullptr, "App: AppState is not set!");
 	mCurrentState->Initialize();
@@ -76,6 +77,7 @@ void App::Run(const AppConfig& config)
 	// when the app is closed, destroy all singletons
 	GraphicsSystem::StaticTerminate();
 	InputSystem::StaticTerminate();
+	TextureManager::StaticTerminate();
 	// ends the app
 
 	myWindow.Terminate();

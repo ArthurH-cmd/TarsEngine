@@ -10,6 +10,7 @@ namespace TarsEngine::Graphics
 		// cube
 		static MeshPC CreateVertexCubePC(float size, const Color& color);
 		static MeshPC CreateCubePC(float size);
+		static MeshPX CreateCubePX(float size);
 
 		// rect
 		static MeshPC CreateBoxPC(float width, float height,float depth);
@@ -18,6 +19,7 @@ namespace TarsEngine::Graphics
 		static MeshPC CreatePyramidPC(float size);
 
 		// plane
+		static MeshPC CreatePlanePC(int numRows, int numColumns, float spacing, bool horizontal = true);
 		static MeshPC CreatePlanePC(int numRows, int numColumns,float spacing,bool horizontal = true);
 
 		// cylinder 

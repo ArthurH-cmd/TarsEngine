@@ -12,3 +12,6 @@
 #include "MeshBuilder.h"
 #include "VertexTypes.h"
 #include "MeshTypes.h"
+#include "Texture.h"
+#include "TextureManager.h"
+#include "Sampler.h"
