@@ -15,3 +15,5 @@
 #include "Texture.h"
 #include "TextureManager.h"
 #include "Sampler.h"
+#include "DebugUI.h"
+#include "SimpleDraw.h"	

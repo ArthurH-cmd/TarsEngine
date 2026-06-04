@@ -20,11 +20,13 @@ void App::Run(const AppConfig& config)
 		config.winHeight);
 
 	auto handle = myWindow.GetWindowsHandle();
+
 	InputSystem::StaticInitialize(handle);
 	GraphicsSystem::StaticInitialize(handle, config.fullScreen);
-
 	GraphicsSystem::Get()->SetClearColor(Colors::DarkOliveGreen);
 	TextureManager::StaticInitialize(L"../../Assets/Textures");
+	DebugUI::StaticInitialize(handle,false,true);
+	SimpleDraw::StaticInitialize(config.maxVertexCount);
 
 	ASSERT(mCurrentState != nullptr, "App: AppState is not set!");
 	mCurrentState->Initialize();
@@ -66,6 +68,9 @@ void App::Run(const AppConfig& config)
 		GraphicsSystem* gs = GraphicsSystem::Get();
 		gs->BeginRender();
 			mCurrentState->Render();
+			DebugUI::BeginDraw();
+				mCurrentState->DebugUI();
+			DebugUI::EndDraw();
 		gs->EndRender();
 
 	}
@@ -75,6 +80,8 @@ void App::Run(const AppConfig& config)
 	// main loop
 
 	// when the app is closed, destroy all singletons
+	SimpleDraw::StaticTerminate();
+	DebugUI::StaticTerminate();
 	GraphicsSystem::StaticTerminate();
 	InputSystem::StaticTerminate();
 	TextureManager::StaticTerminate();

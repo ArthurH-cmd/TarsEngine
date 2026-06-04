@@ -20,12 +20,16 @@ namespace TarsEngine::Graphics
 
 		// plane
 		static MeshPC CreatePlanePC(int numRows, int numColumns, float spacing, bool horizontal = true);
-		static MeshPC CreatePlanePC(int numRows, int numColumns,float spacing,bool horizontal = true);
+		static MeshPX CreatePlanePX(int numRows, int numColumns, float spacing, bool horizontal = true);
 
 		// cylinder 
 		static MeshPC CreateCylinderPC(int slices, int rings);
 
 		// sphere
 		static MeshPC CreateSpherePC(int slices, int rings, float rad);
+		static MeshPX CreateSpherePX(int slices, int rings, float rad);
+
+
+		static MeshPX CreateSkySpherePX(int slices, int rings, float rad);
 	};
 }
