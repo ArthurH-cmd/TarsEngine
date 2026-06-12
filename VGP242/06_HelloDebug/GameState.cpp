@@ -6,8 +6,8 @@ using namespace TarsEngine::Input;
 
 void GameState::Initialize()
 {
-	mCamera.SetPosition({ 0.0f, 1.0f, -3.0f });
-	mCamera.SetLookAt({ 0.0f,0.0f,0.0f });
+    mCamera.SetPosition({ 0.0f, 1.0f, -3.0f });
+    mCamera.SetLookAt({ 0.0f, 0.0f, 0.0f });
 }
 
 void GameState::Terminate()
@@ -16,8 +16,9 @@ void GameState::Terminate()
 
 void GameState::Update(float deltaTime)
 {
-	UpdateCamera(deltaTime);
+    UpdateCamera(deltaTime);
 }
+
 enum class Shape
 {
     None,
@@ -28,6 +29,7 @@ enum class Shape
     GroundCircle,
     Transform
 };
+
 const char* gShapeNames[] =
 {
     "None",
@@ -40,26 +42,57 @@ const char* gShapeNames[] =
 };
 
 Shape gCurrentShape = Shape::None;
-
 Color gShapeColor = Colors::White;
+float gPlaneSize = 10.0f;
 
 void GameState::Render()
 {
-	SimpleDraw::AddGroundPlane(10.0f, Colors::White);
-	SimpleDraw::Render(mCamera);
+    switch (gCurrentShape)
+    {
+    case Shape::None: break;
+    case Shape::AABB:
+        SimpleDraw::AddAABB({ 0.0f, 0.5f, 0.0f }, { 1.0f, 1.0f, 1.0f }, gShapeColor);
+        break;
+    case Shape::AABBFilled:
+        SimpleDraw::AddFilledAABB({ 0.0f, 0.5f, 0.0f }, { 1.0f, 1.0f, 1.0f }, gShapeColor);
+        break;
+    case Shape::Sphere:
+        SimpleDraw::AddSphere(32, 16, 1.0f, { 0.0f, 0.5f, 0.0f }, gShapeColor);
+        break;
+    case Shape::GroundPlane:
+        SimpleDraw::AddGroundPlane(gPlaneSize, gShapeColor);
+        break;
+    case Shape::GroundCircle:
+        SimpleDraw::AddGroundCircle(32, gPlaneSize * 0.5f, { 0.0f, 0.0f, 0.0f }, gShapeColor);
+        break;
+    case Shape::Transform:
+        SimpleDraw::AddTransform(Math::Matrix4::Translation({ 0.0f, 0.0f, 0.0f }));
+        break;
+    default:
+        break;
+    }
+
+    SimpleDraw::Render(mCamera);
 }
 
-float DEMO = 0.0f;
 void GameState::DebugUI()
 {
-	ImGui::Begin("Debug",nullptr, ImGuiWindowFlags_AlwaysAutoResize);
-	ImGui::Text("Fuck ah White BOI shit");
-    ImGui::DragFloat("DEMO", &DEMO);
-	ImGui::End();
+    ImGui::Begin("Debug", nullptr, ImGuiWindowFlags_AlwaysAutoResize);
+
+    ImGui::ColorEdit4("ShapeColor", &gShapeColor.r);
+    int currentShape = (int)gCurrentShape;
+    if (ImGui::Combo("Shape", &currentShape, gShapeNames, std::size(gShapeNames)))
+    {
+        gCurrentShape = (Shape)currentShape;
+    }
+
+    ImGui::DragFloat("PlaneSize", &gPlaneSize, 1.0f, 1.0f, 10000.0f);
+    ImGui::End();
 }
+
 void GameState::UpdateCamera(float deltaTime)
 {
-    InputSystem* input = Input::InputSystem::Get();
+    InputSystem* input = InputSystem::Get();
     const float moveSpeed = input->IsKeyDown(KeyCode::LSHIFT) ? 10.0f : 1.0f;
     const float turnSpeed = 0.1f;
 
@@ -73,8 +106,7 @@ void GameState::UpdateCamera(float deltaTime)
     }
     if (input->IsKeyDown(KeyCode::D))
     {
-        mCamera.Strafe(moveSpeed *
-            deltaTime);
+        mCamera.Strafe(moveSpeed * deltaTime);
     }
     if (input->IsKeyDown(KeyCode::A))
     {

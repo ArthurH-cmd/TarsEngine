@@ -218,7 +218,7 @@ void GameState::Render()
 	Math::Matrix4 moonMatRot = Math::Matrix4::RotationY(mMoonRotation);
 	Math::Matrix4 moonMatLocalTrans = Math::Matrix4::Translation(mMoonOrbitDistance, 0.0f, 0.0f);
 	Math::Matrix4 moonMatLocalOrbit = Math::Matrix4::RotationY(mMoonOrbitRotation);
-	Math::Matrix4 moonMatWorld = moonMatRot * moonMatLocalTrans * moonMatLocalOrbit * earthMatTrans * earthMatOrbit;
+	Math::Matrix4 moonMatWorld = moonMatRot * moonMatLocalTrans * moonMatLocalOrbit * earthMatTrans * earthMatOrbit; //  orbit around Earth
 	wvp = Math::Transpose(moonMatWorld * matView * matProj);
 	mConstantBuffer.Update(&wvp);
 	bindTex(mMoonTextureId);

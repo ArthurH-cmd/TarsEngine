@@ -6,91 +6,111 @@ using namespace TarsEngine::Input;
 
 void ShapeState::Initialize()
 {
-	CreateShape();
-	mMeshBuffer.Initialize(mVertices.data(),sizeof(VertexPC),mVertices.size());
+    CreateShapes();
+    mMeshBuffer.Initialize(mVertices.data(), sizeof(VertexPC), mVertices.size());
 
-	std::filesystem::path shaderPath = L"../../Assets/Shaders/DoColor.fx";
-	mVertexShader.Initialize<VertexPC>(shaderPath);
-	mPixelShader.Initialize(shaderPath);
+    std::filesystem::path shaderPath = L"../../Assets/Shaders/DoColor.fx";
+    mVertexShader.Initialize<VertexPC>(shaderPath);
+    mPixelShader.Initialize(shaderPath);
 }
 
 void ShapeState::Terminate()
 {
-	mVertices.clear();
-	mPixelShader.Terminate();
-	mVertexShader.Terminate();
-	mMeshBuffer.Terminate();
+    mVertices.clear();
+    mPixelShader.Terminate();
+    mVertexShader.Terminate();
+    mMeshBuffer.Terminate();
 }
 
-void ShapeState::Update(float deltatime)
+void ShapeState::Update(float deltaTime)
 {
-	if (InputSystem::Get()->IsKeyPressed(KeyCode::DOWN))
-	{
-		MainApp().ChangeState("QuadState");
-	}
+    if (InputSystem::Get()->IsKeyPressed(KeyCode::UP))
+    {
+        MainApp().ChangeState("HouseState");
+    }
 }
 
-void ShapeState::Render() 
+void ShapeState::Render()
 {
-	mVertexShader.Bind();
-	mPixelShader.Bind();
-	mMeshBuffer.Render();
+    mVertexShader.Bind();
+    mPixelShader.Bind();
+    mMeshBuffer.Render();
 }
 
-void ShapeState::CreateShape()
+void ShapeState::CreateShapes()
 {
-	
-	mVertices.push_back({ {-0.5f,-0.5f,0.0f},{TarsEngine::Graphics::Colors::AliceBlue} });
-	mVertices.push_back({ {0.0f,0.5f,0.0f}, {TarsEngine::Graphics::Colors::Blue} });
-	mVertices.push_back({ {0.5f,-0.5f,0.0f},{TarsEngine::Graphics::Colors::Green} });
+    mVertices.push_back({ {-0.5f, -0.5f, 0.0f}, {TarsEngine::Graphics::Colors::Red} });
+    mVertices.push_back({ {0.5f,  0.5f, 0.0f}, {TarsEngine::Graphics::Colors::Red} });
+    mVertices.push_back({ {0.5f, -0.5f, 0.0f}, {TarsEngine::Graphics::Colors::Red} });
 }
 
 void QuadState::Update(float deltaTime)
 {
+    if (InputSystem::Get()->IsKeyPressed(KeyCode::DOWN))
+    {
+        MainApp().ChangeState("LogoState");
+    }
+}
 
-	if(InputSystem::Get()->IsKeyPressed(KeyCode::UP))
-	{
-		MainApp().ChangeState("ShapeState");
-	}
-	if (InputSystem::Get()->IsKeyPressed(KeyCode::DOWN))
-	{
-		MainApp().ChangeState("HouseState");
-	}
+void QuadState::CreateShapes()
+{
+    mVertices.push_back({ {-0.5f, -0.5f, 0.0f}, {TarsEngine::Graphics::Colors::Red} });
+    mVertices.push_back({ {-0.5f,  0.5f, 0.0f}, {TarsEngine::Graphics::Colors::Red} });
+    mVertices.push_back({ {0.5f,   0.5f, 0.0f}, {TarsEngine::Graphics::Colors::Red} });
+
+    mVertices.push_back({ {-0.5f, -0.5f, 0.0f}, {TarsEngine::Graphics::Colors::Red} });
+    mVertices.push_back({ {0.5f,   0.5f, 0.0f}, {TarsEngine::Graphics::Colors::Red} });
+    mVertices.push_back({ {0.5f,  -0.5f, 0.0f}, {TarsEngine::Graphics::Colors::Red} });
 }
 
 void HouseState::Update(float deltaTime)
 {
-	if (InputSystem::Get()->IsKeyPressed(KeyCode::DOWN))
-	{
-		MainApp().ChangeState("QuadState");
-	}
+    if (InputSystem::Get()->IsKeyPressed(KeyCode::DOWN))
+    {
+        MainApp().ChangeState("QuadState");
+    }
 }
 
-void QuadState::CreateShape()
+void HouseState::CreateShapes()
 {
-	mVertices.push_back({ {-0.5f,-0.5f,0.0f},{TarsEngine::Graphics::Colors::AliceBlue} });
-	mVertices.push_back({ {-0.5f,0.5f,0.0f}, {TarsEngine::Graphics::Colors::Blue} });
-	mVertices.push_back({ {0.5f,0.5f,0.0f},{TarsEngine::Graphics::Colors::Green} });
+    // First Triangle
+    mVertices.push_back({ {-0.5f, -0.5f, 0.0f}, {TarsEngine::Graphics::Colors::Red} });
+    mVertices.push_back({ {-0.5f,  0.5f, 0.0f}, {TarsEngine::Graphics::Colors::Red} });
+    mVertices.push_back({ { 0.5f,  0.5f, 0.0f}, {TarsEngine::Graphics::Colors::Red} });
 
-	mVertices.push_back({ {-0.5f,-0.5f,0.0f},{TarsEngine::Graphics::Colors::AliceBlue} });
-	mVertices.push_back({ {0.5f,0.5f,0.0f}, {TarsEngine::Graphics::Colors::Blue} });
-	mVertices.push_back({ {0.5f,-0.5f,0.0f},{TarsEngine::Graphics::Colors::Green} });
+    // Second Triangle
+    mVertices.push_back({ {-0.5f, -0.5f, 0.0f}, {TarsEngine::Graphics::Colors::Red} });
+    mVertices.push_back({ { 0.5f,  0.5f, 0.0f}, {TarsEngine::Graphics::Colors::Red} });
+    mVertices.push_back({ { 0.5f, -0.5f, 0.0f}, {TarsEngine::Graphics::Colors::Red} });
+
+    // Third Triangle
+    mVertices.push_back({ {-0.5f,  0.5f, 0.0f}, {TarsEngine::Graphics::Colors::Red} });
+    mVertices.push_back({ { 0.0f,  1.0f, 0.0f}, {TarsEngine::Graphics::Colors::Red} });
+    mVertices.push_back({ { 0.5f,  0.5f, 0.0f}, {TarsEngine::Graphics::Colors::Red} });
 }
 
-
-
-void HouseState::CreateShape()
+void LogoState::Update(float deltaTime)
 {
-	mVertices.push_back({ {-0.5f,-0.5f,0.0f},{TarsEngine::Graphics::Colors::AliceBlue} });
-	mVertices.push_back({ {-0.5f,0.5f,0.0f}, {TarsEngine::Graphics::Colors::Blue} });
-	mVertices.push_back({ {0.5f,0.5f,0.0f},{TarsEngine::Graphics::Colors::Green} });
-
-	mVertices.push_back({ {-0.5f,-0.5f,0.0f},{TarsEngine::Graphics::Colors::AliceBlue} });
-	mVertices.push_back({ {0.5f,0.5f,0.0f}, {TarsEngine::Graphics::Colors::Blue} });
-	mVertices.push_back({ {0.5f,-0.5f,0.0f},{TarsEngine::Graphics::Colors::Green} });
-
-	mVertices.push_back({ {-0.5f, 0.5f, 0.0f },{ TarsEngine::Graphics::Colors::AliceBlue } });
-	mVertices.push_back({ { 0.5f, 0.5f, 0.0f },{ TarsEngine::Graphics::Colors::Blue } });
-	mVertices.push_back({ { 0.0f, 1.0f, 0.0f },{ TarsEngine::Graphics::Colors::Green } });
+    if (InputSystem::Get()->IsKeyPressed(KeyCode::DOWN))
+    {
+        MainApp().ChangeState("ShapeState");
+    }
 }
 
+void LogoState::CreateShapes()
+{
+    // First Triangle
+    mVertices.push_back({ {0.0f, 0.0f, 0.0f}, {TarsEngine::Graphics::Colors::Red} });
+    mVertices.push_back({ {-0.5f, -0.5f, 0.0f}, {TarsEngine::Graphics::Colors::Red} });
+    mVertices.push_back({ { 0.5f,  0.5f, 0.0f}, {TarsEngine::Graphics::Colors::Red} });
+
+    // Second Triangle
+    mVertices.push_back({ {0.0f, 0.0f, 0.0f}, {TarsEngine::Graphics::Colors::Red} });
+    mVertices.push_back({ { 0.5f,  0.5f, 0.0f}, {TarsEngine::Graphics::Colors::Red} });
+    mVertices.push_back({ {-0.5f,  0.5f, 0.0f}, {TarsEngine::Graphics::Colors::Red} });
+
+    // Third Triangle
+    mVertices.push_back({ {0.0f, 0.0f, 0.0f}, {TarsEngine::Graphics::Colors::Red} });
+    mVertices.push_back({ { 0.5f,  0.5f, 0.0f}, {TarsEngine::Graphics::Colors::Red} });
+    mVertices.push_back({ { 0.5f, -0.5f, 0.0f}, {TarsEngine::Graphics::Colors::Red} });
+}

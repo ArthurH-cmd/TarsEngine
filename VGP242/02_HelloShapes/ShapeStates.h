@@ -4,42 +4,42 @@
 
 class ShapeState : public TarsEngine::AppState
 {
-public:
-	void Initialize() override;
-	void Terminate() override;
-	void Update(float) override;
-	void Render() override;
+public: 
+    void Initialize() override;
+    void Terminate() override;
+    void Update(float deltaTime) override;
+    void Render() override;
 protected:
-	virtual void CreateShape();
+    virtual void CreateShapes();
 
-	struct Vertex
-	{
-		TarsEngine::Math::Vector3 position;
-		TarsEngine::Graphics::Color color;
-	};
+    using Vertices = std::vector<TarsEngine::Graphics::VertexPC>;
+    Vertices mVertices;
 
-	using Vertices = std::vector<TarsEngine::Graphics::VertexPC>;
-	Vertices mVertices;
-
-
-	TarsEngine::Graphics::VertexShader mVertexShader;
-	TarsEngine::Graphics::MeshBuffer mMeshBuffer;
-	TarsEngine::Graphics::PixleShader mPixelShader;
+    TarsEngine::Graphics::MeshBuffer mMeshBuffer;
+    TarsEngine::Graphics::VertexShader mVertexShader;
+    TarsEngine::Graphics::PixleShader mPixelShader;
 };
 
 class QuadState : public ShapeState
 {
 public:
-	void Update(float deltaTime) override;
+    void Update(float deltaTime) override;
 protected:
-	void CreateShape() override;
+    void CreateShapes() override;
 };
 
 class HouseState : public ShapeState
 {
 public:
-	void Update(float deltaTime) override;
+    void Update(float deltaTime) override;
 protected:
-	void CreateShape() override;
+    void CreateShapes() override;
 };
 
+class LogoState : public ShapeState
+{
+public:
+    void Update(float deltaTime) override;
+protected:
+    void CreateShapes() override;
+};
