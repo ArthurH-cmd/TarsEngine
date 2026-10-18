@@ -14,13 +14,30 @@ void GameState::Initialize()
 	mDirectionalLight.diffuse = { 0.7f, 0.7f, 0.7f, 1.0f };
 	mDirectionalLight.specular = { 0.5f, 0.5f, 0.5f, 1.0f };
 
-	Mesh mesh = MeshBuilder::CreateSphere(30, 30, 1.0f);
-	mRenderObject.meshBuffer.Initialize(mesh);
+	// OBJ1
+	Mesh ball1 = MeshBuilder::CreateSphere(150, 150, 2.0f);
+	mRenderObject.transform.position = { -3.0f, 0.5f, 0.5f };
+	mRenderObject.meshBuffer.Initialize(ball1);
+
+	//OBJ2
+	Mesh ball2 = MeshBuilder::CreateSphere(50, 50, 2.0f);
+	mRenderObject2.transform.position = { 3.0f, 0.5f, 0.5f };
+	mRenderObject2.meshBuffer.Initialize(ball2);
+	
+
 	TextureManager* tm = TextureManager::Get();
-	mRenderObject.diffuseMapId = tm->LoadTexture("earth.jpg");
-	mRenderObject.specMapId = tm->LoadTexture("earth_spec.jpg");
-	mRenderObject.normMapId = tm->LoadTexture("earth_normal.jpg");
-	mRenderObject.bumpMapId = tm->LoadTexture("earth_bump.jpg");
+
+	//OBJ1 TEXTURE
+	mRenderObject.diffuseMapId = tm->LoadTexture("wood_diffuse.jpg");
+	mRenderObject.specMapId = tm->LoadTexture("wood_specular.jpg");
+	mRenderObject.normMapId = tm->LoadTexture("wood_normal.jpg");
+	mRenderObject.bumpMapId = tm->LoadTexture("wood_bump.jpg");
+
+	//OBJ2 TEXTURE
+	mRenderObject2.diffuseMapId = tm->LoadTexture("brick_diffuse.jpg");
+	mRenderObject2.normMapId = tm->LoadTexture("brick_normal.jpg");
+	mRenderObject2.bumpMapId = tm->LoadTexture("brick_bump.jpg");
+	mRenderObject2.specMapId = tm->LoadTexture("brick_specular.jpg");
 
 	std::filesystem::path shaderpath = L"../../Assets/Shaders/Standerd.fx";
 	mStandardEffect.Initialize(shaderpath);
@@ -36,6 +53,7 @@ void GameState::Terminate()
 {
 	mStandardEffect.Terminate();
 	mRenderObject.Terminate();
+	mRenderObject2.Terminate();
 	mStandardEffectCel.Terminate();
 }
 void GameState::Update(float deltaTime)
@@ -44,19 +62,21 @@ void GameState::Update(float deltaTime)
 }
 void GameState::Render()
 {
-	SimpleDraw::AddGroundPlane(10.0f, Colors::Aqua);
+	SimpleDraw::AddGroundPlane(30.0f, Colors::Aqua);
 	SimpleDraw::Render(mCamera);
 
 	if (mUseCellShading)
 	{
 		mStandardEffectCel.Begin();
 			mStandardEffectCel.Render(mRenderObject);
+			mStandardEffectCel.Render(mRenderObject2);
 		mStandardEffectCel.End();
 	}
 	else
 	{
 		mStandardEffect.Begin();
 			mStandardEffect.Render(mRenderObject);
+			mStandardEffect.Render(mRenderObject2);
 		mStandardEffect.End();
 	}
 }

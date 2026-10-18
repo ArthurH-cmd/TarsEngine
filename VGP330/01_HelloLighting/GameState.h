@@ -19,5 +19,6 @@ private:
 	TarsEngine::Graphics::StandardEffect mStandardEffectCel;
 
 	TarsEngine::Graphics::RenderObject mRenderObject;
+	TarsEngine::Graphics::RenderObject mRenderObject2;
 	bool mUseCellShading = false;
 };
