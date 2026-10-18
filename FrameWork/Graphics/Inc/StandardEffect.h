@@ -1,0 +1,71 @@
+#pragma once
+
+#include "ConstantBuffer.h"
+#include "PixleShader.h"
+#include "VertexShader.h"
+#include "DirectionalLight.h"
+#include "Material.h"
+#include "Sampler.h"
+
+namespace TarsEngine::Graphics 
+{
+	class Camera;
+	class RenderObject;
+
+	class StandardEffect final
+	{
+	public:
+		void Initialize(const std::filesystem::path& shaderpath);
+		void Terminate();
+
+		void Begin();
+		void End();
+
+		void Render(const RenderObject& renderObject);
+
+		void DebugUI();
+
+		void SetCamera(const Camera& camera);
+		void SetDirectionalLight(const DirectionalLight& directionalLight);
+
+	private:
+		struct TransformData
+		{
+			Math::Matrix4 wvp;
+			Math::Matrix4 world;
+			Math::Vector3 viewPosition;
+			float padding = 0.0f;
+		};
+
+		struct SettingsData
+		{
+			int useDiffuseMap = 1;
+			int useSpecMap = 1;
+			int useNormMap = 1;
+			int useBumpMap = 1;
+			float bumpWeight = 0.1f;
+			float padding[3] = { 0.0f };
+		};
+
+		using TransformBuffer = TypedConstantBuffer<TransformData>;
+		TransformBuffer mTransformBuffer;
+
+		using LightBuffer = TypedConstantBuffer<DirectionalLight>;
+		LightBuffer mLightBuffer;
+
+		using MaterialBuffer = TypedConstantBuffer<Material>;
+		MaterialBuffer mMaterialBuffer;
+
+		using SettingsBuffer = TypedConstantBuffer<SettingsData>;
+		SettingsBuffer mSettingsBuffer;
+
+		VertexShader mVertexShader;
+		PixleShader mPixleShader;
+		Sampler mSampler;
+
+		const Camera* mCamera = nullptr;
+		const DirectionalLight* mDirectionalLight = nullptr;
+		SettingsData mSettingsData;
+	};
+	
+}

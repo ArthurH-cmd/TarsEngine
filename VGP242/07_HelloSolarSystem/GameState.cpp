@@ -158,30 +158,24 @@ void GameState::Render()
 	Math::Matrix4 matView = mCamera.GetViewMatrix();
 	Math::Matrix4 matProj = mCamera.GetProjectionMatrix();
 
-	// Helper: pick the real texture or basketball override
-	// Usage: BIND_TEX(mEarthTextureId)
 	auto bindTex = [&](TextureId realId)
 		{
 			TextureId id = mUseBasketballTexture ? mBasketballTextureId : realId;
 			TextureManager::Get()->BindPS(id, 0);
 		};
 
-	// SKY SPHERE =========================================//
 	Math::Vector3 camPos = mCamera.GetPosition();
 	Math::Matrix4 skyMatWorld = Math::Matrix4::Translation(camPos.x, camPos.y, camPos.z);
 	Math::Matrix4 wvp = Math::Transpose(skyMatWorld * matView * matProj);
 	mConstantBuffer.Update(&wvp);
-	// Sky is never replaced by basketball
 	TextureManager::Get()->BindPS(mSkyTextureId, 0);
 	mSkyMeshBuf.Render();
 
-	// SUN =========================================//
 	wvp = Math::Transpose(Math::Matrix4::Identity * matView * matProj);
 	mConstantBuffer.Update(&wvp);
 	bindTex(mSunTextureId);
 	mSunMeshBuf.Render();
 
-	// MERCURY =========================================//
 	Math::Matrix4 mercuryMatRot = Math::Matrix4::RotationY(mMercuryRotation);
 	Math::Matrix4 mercuryMatTrans = Math::Matrix4::Translation(mMercuryOrbitDistance, 0.0f, 0.0f);
 	Math::Matrix4 mercuryMatOrbit = Math::Matrix4::RotationY(mMercuryOrbitRotation);
@@ -192,7 +186,6 @@ void GameState::Render()
 	mMercuryMeshBuf.Render();
 	SimpleDraw::AddGroundCircle(20, mMercuryOrbitDistance, Math::Vector3::Zero, Colors::White);
 
-	// VENUS =========================================//
 	Math::Matrix4 venusMatRot = Math::Matrix4::RotationY(mVenusRotation);
 	Math::Matrix4 venusMatTrans = Math::Matrix4::Translation(mVenusOrbitDistance, 0.0f, 0.0f);
 	Math::Matrix4 venusMatOrbit = Math::Matrix4::RotationY(mVenusOrbitRotation);
@@ -203,7 +196,6 @@ void GameState::Render()
 	mVenusMeshBuf.Render();
 	SimpleDraw::AddGroundCircle(20, mVenusOrbitDistance, Math::Vector3::Zero, Colors::White);
 
-	// EARTH =========================================//
 	Math::Matrix4 earthMatRot = Math::Matrix4::RotationY(mEarthRotation);
 	Math::Matrix4 earthMatTrans = Math::Matrix4::Translation(mEarthOrbitDistance, 0.0f, 0.0f);
 	Math::Matrix4 earthMatOrbit = Math::Matrix4::RotationY(mEarthOrbitRotation);
@@ -214,7 +206,6 @@ void GameState::Render()
 	mEarthMeshBuf.Render();
 	SimpleDraw::AddGroundCircle(20, mEarthOrbitDistance, Math::Vector3::Zero, Colors::White);
 
-	// MOON =========================================//
 	Math::Matrix4 moonMatRot = Math::Matrix4::RotationY(mMoonRotation);
 	Math::Matrix4 moonMatLocalTrans = Math::Matrix4::Translation(mMoonOrbitDistance, 0.0f, 0.0f);
 	Math::Matrix4 moonMatLocalOrbit = Math::Matrix4::RotationY(mMoonOrbitRotation);
@@ -224,7 +215,6 @@ void GameState::Render()
 	bindTex(mMoonTextureId);
 	mMoonMeshBuf.Render();
 
-	// MARS =========================================//
 	Math::Matrix4 marsMatRot = Math::Matrix4::RotationY(mMarsRotation);
 	Math::Matrix4 marsMatTrans = Math::Matrix4::Translation(mMarsOrbitDistance, 0.0f, 0.0f);
 	Math::Matrix4 marsMatOrbit = Math::Matrix4::RotationY(mMarsOrbitRotation);
@@ -235,7 +225,6 @@ void GameState::Render()
 	mMarsMeshBuf.Render();
 	SimpleDraw::AddGroundCircle(20, mMarsOrbitDistance, Math::Vector3::Zero, Colors::White);
 
-	// JUPITER =========================================//
 	Math::Matrix4 jupiterMatRot = Math::Matrix4::RotationY(mJupiterRotation);
 	Math::Matrix4 jupiterMatTrans = Math::Matrix4::Translation(mJupiterOrbitDistance, 0.0f, 0.0f);
 	Math::Matrix4 jupiterMatOrbit = Math::Matrix4::RotationY(mJupiterOrbitRotation);
@@ -246,7 +235,6 @@ void GameState::Render()
 	mJupiterMeshBuf.Render();
 	SimpleDraw::AddGroundCircle(20, mJupiterOrbitDistance, Math::Vector3::Zero, Colors::White);
 
-	// SATURN =========================================//
 	Math::Matrix4 saturnMatRot = Math::Matrix4::RotationY(mSaturnRotation);
 	Math::Matrix4 saturnMatTrans = Math::Matrix4::Translation(mSaturnOrbitDistance, 0.0f, 0.0f);
 	Math::Matrix4 saturnMatOrbit = Math::Matrix4::RotationY(mSaturnOrbitRotation);
@@ -257,7 +245,6 @@ void GameState::Render()
 	mSaturnMeshBuf.Render();
 	SimpleDraw::AddGroundCircle(20, mSaturnOrbitDistance, Math::Vector3::Zero, Colors::White);
 
-	// URANUS =========================================//
 	Math::Matrix4 uranusMatRot = Math::Matrix4::RotationY(mUranusRotation);
 	Math::Matrix4 uranusMatTrans = Math::Matrix4::Translation(mUranusOrbitDistance, 0.0f, 0.0f);
 	Math::Matrix4 uranusMatOrbit = Math::Matrix4::RotationY(mUranusOrbitRotation);
@@ -268,7 +255,6 @@ void GameState::Render()
 	mUranusMeshBuf.Render();
 	SimpleDraw::AddGroundCircle(20, mUranusOrbitDistance, Math::Vector3::Zero, Colors::White);
 
-	// NEPTUNE =========================================//
 	Math::Matrix4 neptuneMatRot = Math::Matrix4::RotationY(mNeptuneRotation);
 	Math::Matrix4 neptuneMatTrans = Math::Matrix4::Translation(mNeptuneOrbitDistance, 0.0f, 0.0f);
 	Math::Matrix4 neptuneMatOrbit = Math::Matrix4::RotationY(mNeptuneOrbitRotation);
@@ -279,7 +265,6 @@ void GameState::Render()
 	mNeptuneMeshBuf.Render();
 	SimpleDraw::AddGroundCircle(20, mNeptuneOrbitDistance, Math::Vector3::Zero, Colors::White);
 
-	// PLUTO =========================================//
 	Math::Matrix4 plutoMatRot = Math::Matrix4::RotationY(mPlutoRotation);
 	Math::Matrix4 plutoMatTrans = Math::Matrix4::Translation(mPlutoOrbitDistance, 0.0f, 0.0f);
 	Math::Matrix4 plutoMatOrbit = Math::Matrix4::RotationY(mPlutoOrbitRotation);
@@ -356,6 +341,53 @@ void GameState::DebugUI()
 	}
 
 	ImGui::Separator();
+
+	if (ImGui::CollapsingHeader("Camera Focus"))
+	{
+		if (ImGui::Button("Focus on Sun"))
+		{
+			mCamera.SetPosition({ 0.0f, 0.0f, -2.0f });
+			mCamera.SetLookAt({ 0.0f, 0.0f, 0.0f });
+		}
+		if (ImGui::Button("Focus on Mercury"))
+		{
+			mCamera.SetPosition({ mMercuryOrbitDistance, 0.5f, -mMercuryOrbitDistance });
+			mCamera.SetLookAt({ mMercuryOrbitDistance, 0.0f, 0.0f });
+		}
+		if (ImGui::Button("Focus on Venus"))
+		{
+			mCamera.SetPosition({ mVenusOrbitDistance, 0.5f, -mVenusOrbitDistance });
+			mCamera.SetLookAt({ mVenusOrbitDistance, 0.0f, 0.0f });
+		}
+		if (ImGui::Button("Focus on Earth"))
+		{
+			mCamera.SetPosition({ mEarthOrbitDistance, 0.5f, -mEarthOrbitDistance });
+			mCamera.SetLookAt({ mEarthOrbitDistance, 0.0f, 0.0f });
+		}
+		if (ImGui::Button("Focus on Mars"))
+		{
+			mCamera.SetPosition({ mMarsOrbitDistance, 0.5f, -mMarsOrbitDistance });
+			mCamera.SetLookAt({ mMarsOrbitDistance, 0.0f, 0.0f });
+		}
+		if (ImGui::Button("Focus on Jupiter"))
+		{
+			mCamera.SetPosition({ mJupiterOrbitDistance, 0.5f, -mJupiterOrbitDistance });
+			mCamera.SetLookAt({ mJupiterOrbitDistance, 0.0f, 0.0f });
+		}
+		if (ImGui::Button("Focus on Saturn"))
+		{
+			mCamera.SetPosition({ mSaturnOrbitDistance, 0.5f, -mSaturnOrbitDistance });
+			mCamera.SetLookAt({ mSaturnOrbitDistance, 0.0f, 0.0f });
+		}
+		if (ImGui::Button("Focus on Uranus"))
+		{
+			mCamera.SetPosition({ mUranusOrbitDistance, 0.5f, -mUranusOrbitDistance });
+			mCamera.SetLookAt({ mUranusOrbitDistance, 0.0f, 0.0f });
+		}
+	}
+
+	ImGui::Separator();
+
 	if (ImGui::Button("Reset All Speeds"))
 	{
 		mMercurySpinSpeed = 3.0f;   mMercuryOrbitSpeed = 8.0f;
