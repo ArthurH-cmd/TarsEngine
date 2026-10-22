@@ -17,6 +17,7 @@ private:
 	TarsEngine::Graphics::DirectionalLight mDirectionalLight;
 	TarsEngine::Graphics::StandardEffect mStandardEffect;
 	TarsEngine::Graphics::StandardEffect mStandardEffectCel;
+	TarsEngine::Graphics::RenderTarget mRenderTarget;
 
 	TarsEngine::Graphics::RenderObject mRenderObject;
 	TarsEngine::Graphics::RenderObject mRenderObject2;

@@ -1,5 +1,10 @@
-﻿  RenderTarget.cpp
+﻿  RenderObject.cpp
+  RenderTarget.cpp
+  StandardEffect.cpp
 C:\Users\arthu\Desktop\TarsEngine\FrameWork\Graphics\Src\RenderTarget.cpp(100,76): warning C4244: 'argument': conversion from 'float' to 'UINT8', possible loss of data
   (compiling source file '/Src/RenderTarget.cpp')
   
+  Texture.cpp
+  TextureManager.cpp
+  Generating Code...
   Graphics.vcxproj -> C:\Users\arthu\Desktop\TarsEngine\x64\Debug\Graphics.lib
