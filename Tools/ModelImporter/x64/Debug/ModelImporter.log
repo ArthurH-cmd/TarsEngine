@@ -1,0 +1,6 @@
+﻿  main.cpp
+C:\Users\arthu\Desktop\TarsEngine\Tools\ModelImporter\main.cpp(33,21): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  ModelImporter.vcxproj -> C:\Users\arthu\Desktop\TarsEngine\x64\Debug\ModelImporter.exe
+  C:\Users\arthu\Desktop\TarsEngine\External\assimp-5.2.5\bin\assimp-vc143-mt.dll
+  C:\Users\arthu\Desktop\TarsEngine\External\assimp-5.2.5\bin\assimp-vc143-mtd.dll
+          2 file(s) copied.
