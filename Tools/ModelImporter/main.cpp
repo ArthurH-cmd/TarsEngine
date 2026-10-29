@@ -62,6 +62,101 @@ Color toColor(const aiColor3D& c)
 	};
 }
 
+void ExportEmbeddedTexture(const aiTexture* texture, const Arguments& args, const std::filesystem::path& filename)
+{
+	printf("Extracting embedded textures %s\n", filename.u8string().c_str());
+
+	std::string fullFileName = args.outputFileName.u8string();
+	fullFileName = fullFileName.substr(0, fullFileName.rfind('/') + 1);
+	fullFileName += filename.filename().u8string();
+
+	FILE* file = nullptr;
+	auto err = fopen_s(&file, fullFileName.c_str(), "wb");
+	if (err != 0 || file == nullptr)
+	{
+		printf("error: failed to open file %s for saving\n", fullFileName.c_str());
+		return;
+	}
+
+	std::size_t written = fwrite(texture->pcData, 1, texture->mWidth, file);
+	ASSERT(written == texture->mWidth, "error: failed to extract embedded textures");
+	fclose(file);
+}
+
+std::string FindTexture(const aiScene* scene, const aiMaterial* aiMaterial,
+	aiTextureType textureType, const Arguments& args, const std::string& suffix,
+	uint32_t materialIndex)
+{
+	const uint32_t textureCount = aiMaterial->GetTextureCount(textureType);
+	if (textureCount == 0)
+	{
+		return "";
+	}
+
+	std::filesystem::path textureName;
+	aiString texturePath;
+	if (aiMaterial->GetTexture(textureType,0,&texturePath) == aiReturn_SUCCESS)
+	{
+		if (texturePath.C_Str()[0] == '*')
+		{
+			std::string fileName = args.inputFileName.u8string();
+			fileName.erase(fileName.length() - 4);
+			fileName += suffix;
+			fileName += texturePath.C_Str()[1];
+
+			ASSERT(scene->HasTextures(), "ERROR: no embedded textures found");
+
+			int textureIndex = atoi(texturePath.C_Str() + 1);
+			ASSERT(textureIndex < scene->mNumTextures,"error invalid Texture index");
+
+			const aiTexture* embeddedTexture = scene->mTextures[textureIndex];
+			ASSERT(embeddedTexture->mHeight == 0, "Error: uncompressed texture found");
+
+			if (embeddedTexture->CheckFormat("jpg"))
+			{
+				fileName += ".jpg";
+			}
+			else if (embeddedTexture->CheckFormat("png"))
+			{
+				fileName += ".png";
+			}
+			else
+			{
+				ASSERT(false, "Error: unsupported texture format");
+			}
+
+			printf("Adding texture %s\n", fileName.c_str());
+			ExportEmbeddedTexture(embeddedTexture, args, fileName);
+			textureName = fileName;
+		}
+		else if (auto embeddedTexture = scene->GetEmbeddedTexture(texturePath.C_Str()); embeddedTexture != nullptr)
+		{
+			std::filesystem::path embeddedFilePath = texturePath.C_Str();
+			std::string filename = args.inputFileName.u8string();
+			filename.erase(filename.length() - 4);
+			filename += suffix;
+			filename += "_" + std::to_string(materialIndex);
+			filename += embeddedFilePath.extension().u8string();
+
+			printf("Adding texture %s\n", filename.c_str());
+			ExportEmbeddedTexture(embeddedTexture, args, filename);
+			textureName = filename;
+		}
+		else
+		{
+			std::filesystem::path filePath = texturePath.C_Str();
+			std::string fileName = filePath.u8string();
+
+			printf("Adding Textures %s\n", fileName.c_str());
+			textureName = fileName;
+		}
+	}
+
+	return textureName.filename().u8string();
+}
+
+
+
 // <scale> <scaleValue> <inputfilename> <outputfilename> 
 int main(int argc, char* argv[])
 {
@@ -139,9 +234,43 @@ int main(int argc, char* argv[])
 		}
 	}
 
+	if (scene->HasMaterials())
+	{
+		printf("reading mat Data...\n");
+
+		const uint32_t numMaterials = scene->mNumMaterials;
+		model.materialData.reserve(numMaterials);
+		for (uint32_t materialIndex = 0; materialIndex < numMaterials; ++ materialIndex)
+		{
+			const auto& aiMaterial = scene->mMaterials[materialIndex];
+			aiColor3D emissive, ambient, diffuse, specular;
+			ai_real specularPower = 10.0f;
+
+			aiMaterial->Get(AI_MATKEY_COLOR_EMISSIVE, emissive);
+			aiMaterial->Get(AI_MATKEY_COLOR_AMBIENT, ambient);
+			aiMaterial->Get(AI_MATKEY_COLOR_DIFFUSE, diffuse);
+			aiMaterial->Get(AI_MATKEY_COLOR_SPECULAR, specular);
+
+			Model::MaterialData& materialData = model.materialData.emplace_back();
+			materialData.material.emissive = toColor(emissive);
+			materialData.material.ambient = toColor(ambient);
+			materialData.material.diffuse = toColor(diffuse);
+			materialData.material.specular = toColor(specular);
+
+			materialData.diffuseName = FindTexture(scene, aiMaterial, aiTextureType_DIFFUSE, args, "_diff", materialIndex);
+			materialData.normName = FindTexture(scene, aiMaterial, aiTextureType_NORMALS, args, "_norm", materialIndex);
+			materialData.specName = FindTexture(scene, aiMaterial, aiTextureType_SPECULAR, args, "_spec", materialIndex);
+			materialData.bumpName = FindTexture(scene, aiMaterial, aiTextureType_DISPLACEMENT, args, "_bump", materialIndex);
+		}
+	}
+
+
 	// save the data
 	printf("Saving Model...\n");
 	ModelIO::SaveModel(args.outputFileName, model);
+
+	printf("Saving Material...\n");
+	ModelIO::SaveMaterial(args.outputFileName, model);
 
 	printf("Import Complete :)\n");
 

@@ -83,6 +83,9 @@
       <Filter>Inc</Filter>
     </ClInclude>
     <ClInclude Include="Inc\ModelIO.h" />
+    <ClInclude Include="Inc\ModelManager.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Src\Precompiled.cpp">
@@ -132,5 +135,8 @@
       <Filter>Src</Filter>
     </ClCompile>
     <ClCompile Include="Src\ModelIO.cpp" />
+    <ClCompile Include="Src\ModelManager.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

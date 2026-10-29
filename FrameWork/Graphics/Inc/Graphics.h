@@ -25,3 +25,4 @@
 #include "RenderTarget.h"
 #include "Model.h"
 #include "ModelIO.h"
+#include "ModelManager.h"

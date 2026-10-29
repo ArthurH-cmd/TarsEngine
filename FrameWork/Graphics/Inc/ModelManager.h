@@ -1,0 +1,35 @@
+#pragma once
+
+#include "Model.h"
+
+namespace TarsEngine::Graphics
+{
+	using ModelId = std::size_t;
+	class ModelManager final
+	{
+	public:
+		static void StaticInitilize(const std::filesystem::path& rootPath);
+		static void StaticTerminate();
+		static ModelManager* Get();
+
+		ModelManager() = default;
+		~ModelManager() = default;
+
+		ModelManager(const ModelManager&) = delete;
+		ModelManager(ModelManager&&) = delete;
+		ModelManager& operator=(const ModelManager&) = delete;
+		ModelManager& operator=(ModelManager&&) = delete;
+
+		void SetRootDirectory(const std::filesystem::path& rootPath);
+		ModelId GetModelId(const std::filesystem::path& rootPath);
+		ModelId LoadModel(const std::filesystem::path& rootPath);
+
+		const Model* GetModel(ModelId id);
+
+	private:
+		using Inventory = std::unordered_map<ModelId, std::unique_ptr<Model>>;
+		Inventory mInventory;
+
+		std::filesystem::path mRootDirectory;
+	};
+}
