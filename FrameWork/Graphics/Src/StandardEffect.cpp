@@ -66,7 +66,7 @@ void StandardEffect::Render(const RenderObject& renderObject)
 	mMaterialBuffer.Update(renderObject.material);
 
 	SettingsData settings;
-	settings.useDiffuseMap = (mSettingsData.useDiffuseMap > 0 && renderObject.specMapId > 0) ? 1 : 0;
+	settings.useDiffuseMap = (mSettingsData.useDiffuseMap > 0 && renderObject.diffuseMapId > 0) ? 1 : 0;
 	settings.useSpecMap = (mSettingsData.useSpecMap > 0 && renderObject.specMapId > 0) ? 1 : 0;
 	settings.useNormMap = (mSettingsData.useNormMap > 0 && renderObject.normMapId > 0) ? 1 : 0;
 	settings.useBumpMap = (mSettingsData.useBumpMap > 0 && renderObject.bumpMapId > 0) ? 1 : 0;
@@ -103,7 +103,7 @@ void StandardEffect::Render(const RenderGroup& renderGroup)
 		mMaterialBuffer.Update(renderObject.material);
 
 		SettingsData settings;
-		settings.useDiffuseMap = (mSettingsData.useDiffuseMap > 0 && renderObject.specMapId > 0) ? 1 : 0;
+		settings.useDiffuseMap = (mSettingsData.useDiffuseMap > 0 && renderObject.diffuseMapId > 0) ? 1 : 0;
 		settings.useSpecMap = (mSettingsData.useSpecMap > 0 && renderObject.specMapId > 0) ? 1 : 0;
 		settings.useNormMap = (mSettingsData.useNormMap > 0 && renderObject.normMapId > 0) ? 1 : 0;
 		settings.useBumpMap = (mSettingsData.useBumpMap > 0 && renderObject.bumpMapId > 0) ? 1 : 0;

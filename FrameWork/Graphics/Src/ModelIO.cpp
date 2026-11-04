@@ -106,7 +106,7 @@ void ModelIO::SaveMaterial(std::filesystem::path filePath, const Model& model)
 	}
 
 	uint32_t materialCount = static_cast<uint32_t>(model.materialData.size());
-	fprintf_s(file, "Material count %d\n", materialCount);
+	fprintf_s(file, "Material count %d\n", &materialCount);
 	for (const Model::MaterialData& materialData : model.materialData)
 	{
 		const Material& m = materialData.material;

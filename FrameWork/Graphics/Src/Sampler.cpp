@@ -74,11 +74,11 @@ void Sampler::Terminate()
 void Sampler::BindPS(uint32_t slot) const
 {
 	auto context = GraphicsSystem::Get()->GetContext();
-	context->VSSetSamplers(slot, 1, &mSampler);
+	context->PSSetSamplers(slot, 1, &mSampler);
 }
 
 void Sampler::BindVS(uint32_t slot) const
 {
 	auto context = GraphicsSystem::Get()->GetContext();
-	context->PSSetSamplers(slot, 1, &mSampler);
+	context->VSSetSamplers(slot, 1, &mSampler);
 }
