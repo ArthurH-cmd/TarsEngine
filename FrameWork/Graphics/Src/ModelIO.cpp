@@ -41,7 +41,7 @@ void ModelIO::SaveModel(std::filesystem::path filePath, const Model& model)
 
 		const uint32_t indexCount = static_cast<uint32_t>(mesh.indices.size());
 		fprintf_s(file, "IndexCount: %d\n", indexCount);
-		for (uint32_t i = 2; i < indexCount; i+=3)
+		for (uint32_t i = 2; i < indexCount; i += 3)
 		{
 			fprintf_s(file, "%d %d %d\n", mesh.indices[i - 2], mesh.indices[i - 1], mesh.indices[i]);
 		}
@@ -92,8 +92,8 @@ void ModelIO::LoadModel(std::filesystem::path filePath, Model& model)
 
 void ModelIO::SaveMaterial(std::filesystem::path filePath, const Model& model)
 {
-	if(model.materialData.empty())
-	{ 
+	if (model.materialData.empty())
+	{
 		return;
 	}
 	filePath.replace_extension("material");
@@ -106,7 +106,7 @@ void ModelIO::SaveMaterial(std::filesystem::path filePath, const Model& model)
 	}
 
 	uint32_t materialCount = static_cast<uint32_t>(model.materialData.size());
-	fprintf_s(file, "Material count %d\n", &materialCount);
+	fprintf_s(file, "Material count %d\n", materialCount);
 	for (const Model::MaterialData& materialData : model.materialData)
 	{
 		const Material& m = materialData.material;
@@ -136,17 +136,17 @@ void ModelIO::LoadMaterial(std::filesystem::path filePath, Model& model)
 	}
 
 	auto TryReadTextureName = [&](auto& fileName)
-	{
-		char buffer[MAX_PATH];
-		fscanf_s(file, "%s\n", &buffer, (uint32_t)sizeof(buffer));
-		if (strcmp(buffer, "<none>") != 0)
 		{
-			fileName = filePath.replace_filename(buffer).string();
-		}
-	};
+			char buffer[MAX_PATH];
+			fscanf_s(file, "%s\n", &buffer, (uint32_t)sizeof(buffer));
+			if (strcmp(buffer, "<none>") != 0)
+			{
+				fileName = filePath.replace_filename(buffer).string();
+			}
+		};
 
 	uint32_t materialCount = 0;
-	fscanf_s(file, "MaterialCount: %d\n", &materialCount);
+	fscanf_s(file, "Material count %d\n", &materialCount);
 	model.materialData.resize(materialCount);
 	for (Model::MaterialData& materialData : model.materialData)
 	{
