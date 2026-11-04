@@ -14,7 +14,13 @@ void GameState::Initialize()
 	mDirectionalLight.diffuse = { 0.7f, 0.7f, 0.7f, 1.0f };
 	mDirectionalLight.specular = { 0.5f, 0.5f, 0.5f, 1.0f };
 
-	mCharacter.Initialize("Character01/Bill.model");
+	mCharacter01.Initialize("Character01/Bill.model");
+
+	mCharacter02.Initialize("Character02/Monk.model");
+	mCharacter02.transform.position.x += 2.0f;
+
+	mCharacter03.Initialize("Character03/BigVic.model");
+	mCharacter03.transform.position.x -= 2.0f;
 
 	std::filesystem::path shaderpath = L"../../Assets/Shaders/Standerd.fx";
 	mStandardEffect.Initialize(shaderpath);
@@ -24,6 +30,9 @@ void GameState::Initialize()
 }
 void GameState::Terminate()
 {
+	mCharacter01.Terminate();
+	mCharacter02.Terminate();
+	mCharacter03.Terminate();
 	mStandardEffect.Terminate();
 }
 void GameState::Update(float deltaTime)
@@ -36,7 +45,9 @@ void GameState::Render()
 	SimpleDraw::Render(mCamera);
 
 	mStandardEffect.Begin();
-		mStandardEffect.Render(mCharacter);
+		mStandardEffect.Render(mCharacter01);
+		mStandardEffect.Render(mCharacter02);
+		mStandardEffect.Render(mCharacter03);
 	mStandardEffect.End();
 
 }

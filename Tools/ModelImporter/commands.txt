@@ -1,0 +1,3 @@
+-scale 0.01 ../../Assets/Models/Character01/Bill.fbx ../../Assets/Models/Character01/Bill.model
+-scale 0.01 ../../Assets/Models/Character02/Monk.fbx ../../Assets/Models/Character02/Monk.model
+-scale 0.01 ../../Assets/Models/Character03/BigVic.fbx ../../Assets/Models/Character03/BigVic.model

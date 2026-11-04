@@ -16,5 +16,7 @@ private:
 	TarsEngine::Graphics::Camera mCamera;
 	TarsEngine::Graphics::DirectionalLight mDirectionalLight;
 	TarsEngine::Graphics::StandardEffect mStandardEffect;
-	TarsEngine::Graphics::RenderGroup mCharacter;
+	TarsEngine::Graphics::RenderGroup mCharacter01;
+	TarsEngine::Graphics::RenderGroup mCharacter02;
+	TarsEngine::Graphics::RenderGroup mCharacter03;
 };
