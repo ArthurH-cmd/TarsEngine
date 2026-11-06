@@ -1,51 +1,14 @@
-﻿  Precompiled.cpp
-  Camera.cpp
-  ConstantBuffer.cpp
-  DebugUI.cpp
-  GraphicsSystem.cpp
-C:\Users\arthu\Desktop\TarsEngine\FrameWork\Graphics\Src\DebugUI.cpp(110,27): warning C4551: function call missing argument list
-  (compiling source file '/Src/DebugUI.cpp')
+﻿  PostProcessingEffect.cpp
+C:\Users\arthu\Desktop\TarsEngine\FrameWork\Graphics\Src\PostProcessingEffect.cpp(75,51): warning C4244: 'initializing': conversion from 'uint32_t' to 'float', possible loss of data
+  (compiling source file '/Src/PostProcessingEffect.cpp')
   
-C:\Users\arthu\Desktop\TarsEngine\FrameWork\Graphics\Src\DebugUI.cpp(111,28): warning C4551: function call missing argument list
-  (compiling source file '/Src/DebugUI.cpp')
+C:\Users\arthu\Desktop\TarsEngine\FrameWork\Graphics\Src\PostProcessingEffect.cpp(75,27): warning C4244: 'initializing': conversion from 'uint32_t' to 'const float', possible loss of data
+  (compiling source file '/Src/PostProcessingEffect.cpp')
   
-C:\Users\arthu\Desktop\TarsEngine\FrameWork\Graphics\Src\DebugUI.cpp(112,30): warning C4551: function call missing argument list
-  (compiling source file '/Src/DebugUI.cpp')
+C:\Users\arthu\Desktop\TarsEngine\FrameWork\Graphics\Src\PostProcessingEffect.cpp(76,53): warning C4244: 'initializing': conversion from 'uint32_t' to 'float', possible loss of data
+  (compiling source file '/Src/PostProcessingEffect.cpp')
   
-  MeshBuffer.cpp
-  MeshBuilder.cpp
-C:\Users\arthu\Desktop\TarsEngine\FrameWork\Graphics\Src\MeshBuilder.cpp(204,26): warning C4267: 'initializing': conversion from 'size_t' to 'uint32_t', possible loss of data
-  (compiling source file '/Src/MeshBuilder.cpp')
+C:\Users\arthu\Desktop\TarsEngine\FrameWork\Graphics\Src\PostProcessingEffect.cpp(76,28): warning C4244: 'initializing': conversion from 'uint32_t' to 'const float', possible loss of data
+  (compiling source file '/Src/PostProcessingEffect.cpp')
   
-C:\Users\arthu\Desktop\TarsEngine\FrameWork\Graphics\Src\MeshBuilder.cpp(205,29): warning C4267: 'initializing': conversion from 'size_t' to 'uint32_t', possible loss of data
-  (compiling source file '/Src/MeshBuilder.cpp')
-  
-  ModelIO.cpp
-  ModelManager.cpp
-  PixleShader.cpp
-C:\Users\arthu\Desktop\TarsEngine\FrameWork\Graphics\Src\PixleShader.cpp(27,3): warning C4474: 'snprintf' : too many arguments passed for format string
-  (compiling source file '/Src/PixleShader.cpp')
-      C:\Users\arthu\Desktop\TarsEngine\FrameWork\Graphics\Src\PixleShader.cpp(27,3):
-      placeholders and their parameters expect 1 variadic arguments, but 2 were provided
-  
-  RenderObject.cpp
-  RenderTarget.cpp
-C:\Users\arthu\Desktop\TarsEngine\FrameWork\Graphics\Src\RenderTarget.cpp(100,76): warning C4244: 'argument': conversion from 'float' to 'UINT8', possible loss of data
-  (compiling source file '/Src/RenderTarget.cpp')
-  
-  Sampler.cpp
-  SimpleDraw.cpp
-  StandardEffect.cpp
-  Texture.cpp
-  TextureManager.cpp
-  VertexShader.cpp
-C:\Users\arthu\Desktop\TarsEngine\FrameWork\Graphics\Src\VertexShader.cpp(69,3): warning C4778: 'snprintf' : unterminated format string '%\n'
-  (compiling source file '/Src/VertexShader.cpp')
-  
-C:\Users\arthu\Desktop\TarsEngine\FrameWork\Graphics\Src\VertexShader.cpp(69,3): warning C4474: 'snprintf' : too many arguments passed for format string
-  (compiling source file '/Src/VertexShader.cpp')
-      C:\Users\arthu\Desktop\TarsEngine\FrameWork\Graphics\Src\VertexShader.cpp(69,3):
-      placeholders and their parameters expect 1 variadic arguments, but 2 were provided
-  
-  Generating Code...
   Graphics.vcxproj -> C:\Users\arthu\Desktop\TarsEngine\x64\Debug\Graphics.lib

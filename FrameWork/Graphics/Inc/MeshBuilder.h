@@ -33,5 +33,8 @@ namespace TarsEngine::Graphics
 
 
 		static MeshPX CreateSkySpherePX(int slices, int rings, float rad);
+
+		//screen quad
+		static MeshPX CreateScreenQuadPX();
 	};
 }

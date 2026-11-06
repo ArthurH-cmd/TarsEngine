@@ -499,3 +499,16 @@ MeshPX MeshBuilder::CreateSkySpherePX(int slices, int rings, float radius)
     CreatePlaneIndices(mesh.indices, rings, slices);
     return mesh;
 }
+
+MeshPX MeshBuilder::CreateScreenQuadPX()
+{
+	MeshPX mesh;
+
+	mesh.vertices.push_back({ { -1.0f,  -1.0f, 0.0f }, { 0.0f, 1.0f } });
+    mesh.vertices.push_back({ { -1.0f,  1.0f, 0.0f }, { 0.0f, 0.0f } });
+    mesh.vertices.push_back({ { 1.0f,  1.0f, 0.0f }, { 1.0f, 0.0f } });
+    mesh.vertices.push_back({ { 1.0f,  -1.0f, 0.0f }, { 1.0f, 1.0f } });
+
+	mesh.indices = { 0, 1, 2, 0, 2, 3 };
+    return mesh;
+}

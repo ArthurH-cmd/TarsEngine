@@ -23,7 +23,7 @@ void App::Run(const AppConfig& config)
 
 	InputSystem::StaticInitialize(handle);
 	GraphicsSystem::StaticInitialize(handle, config.fullScreen);
-	GraphicsSystem::Get()->SetClearColor(Colors::DarkOliveGreen);
+	GraphicsSystem::Get()->SetClearColor(Colors::Black);
 	TextureManager::StaticInitialize(L"../../Assets/Textures");
 	ModelManager::StaticInitilize(L"../../Assets/Models");
 	DebugUI::StaticInitialize(handle,false,true);
